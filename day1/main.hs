@@ -12,6 +12,7 @@ main :: IO()
 main = do
     file <- readFile "input"
     let contents = map digitToInt file
-    let contents2 = contents ++ [head contents]
-    let contents3 = sum $ map pairvalue (pairs contents2)
-    putStrLn $ show contents3
+    let half = splitAt (length contents `div` 2) contents
+    let contents2 = zip (fst half) (snd half)
+    let contents3 = sum $ map pairvalue contents2
+    putStrLn $ show $ contents3 * 2
