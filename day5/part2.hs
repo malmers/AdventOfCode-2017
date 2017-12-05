@@ -1,7 +1,7 @@
 module Main where
 import Data.Char
 import Data.List
-import qualified Data.Map as M
+import qualified Data.Map.Strict as M
 
 -- Compile this program with ghc before you run it
 
